@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+
+development:
+  <<: *default
+  database: interntrak_development
+
+test:
+  <<: *default
+  database: interntrak_test
