@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.0.1'
 
 gem 'coffee-rails', '~> 4.2'
+gem 'devise' # Authentication and authorization
 gem 'listen'
 gem 'jquery-rails'
 gem 'pg'

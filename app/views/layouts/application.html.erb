@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <%= link_to('Sign out', sign_out_path, class: "btn btn__link", :method => :delete) %>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <%= yield %>
   </body>
 </html>
