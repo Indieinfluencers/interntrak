@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <div class="container">
+      <div class="navigation"></div>
+      <div class="right-column">
+        <div class="login"></div>
+        <div class="content"></div>
+      </div>
+    </div>
+
     <% if user_signed_in? %>
       <%= link_to('Sign out', sign_out_path, class: "btn btn__link", :method => :delete) %>
     <% end %>
