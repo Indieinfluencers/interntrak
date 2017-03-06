@@ -12,24 +12,33 @@
     <div class="container">
       <div id="navigation">
         <div id="logo-home-link" class="image-link-buttons">
-          <%= link_to image_tag("train-track.jpg", alt: "interntrak-logo"), root_path %>
+          <%= link_to image_tag("train-track.png", alt: "interntrak-logo"), root_path %>
         </div>
         <div id="user-img-link" class="image-link-buttons">
           <%= link_to image_tag("temp-user-img.png", alt: "user-img"), edit_user_registration_path %>
         </div>
+        <div id="feature-links">
+          <div class="feature-link"><%= link_to 'Schedule', '' %></div>
+          <div class="feature-link"><%= link_to 'Notes', '' %></div>
+          <div class="feature-link"><%= link_to 'Pairing', '' %></div>
+          <div class="feature-link"><%= link_to 'Stories', '' %></div>
+          <div class="feature-link"><%= link_to 'Assessment', '' %></div>
+          <div class="feature-link"><%= link_to 'Resources', '' %></div>
+        </div>
       </div>
       <div id="right-column">
-        <div class="login"></div>
-        <div class="content"></div>
+        <div class="login">
+          <% if user_signed_in? %>
+            <%= link_to('Sign out', sign_out_path, class: "btn btn__link", :method => :delete) %>
+          <% end %>
+        </div>
+        <div class="content">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <%= yield %>
+        </div>
       </div>
     </div>
-
-    <% if user_signed_in? %>
-      <%= link_to('Sign out', sign_out_path, class: "btn btn__link", :method => :delete) %>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
   </body>
 </html>
