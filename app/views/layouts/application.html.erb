@@ -10,8 +10,15 @@
 
   <body>
     <div class="container">
-      <div class="navigation"></div>
-      <div class="right-column">
+      <div id="navigation">
+        <div id="logo-home-link" class="image-link-buttons">
+          <%= link_to image_tag("train-track.jpg", alt: "interntrak-logo"), root_path %>
+        </div>
+        <div id="user-img-link" class="image-link-buttons">
+          <%= link_to image_tag("temp-user-img.png", alt: "user-img"), edit_user_registration_path %>
+        </div>
+      </div>
+      <div id="right-column">
         <div class="login"></div>
         <div class="content"></div>
       </div>
@@ -22,7 +29,7 @@
     <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+
     <%= yield %>
   </body>
 </html>
