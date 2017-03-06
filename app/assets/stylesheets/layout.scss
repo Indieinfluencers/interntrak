@@ -1,26 +1,51 @@
+.container {
+  background-color: #ededed;
+  font-family: "Arial";
+}
+
 #navigation {
   float: left;
   width: 100px;
   background-color: #153B50;
 
-  #feature-links {
-    .feature-link {
-      color: red;
-    }
+  h4 {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    font-weight: lighter;
   }
 
+  #feature-links {
+    margin: 40px 0px;
+
+    .feature-link {
+      padding: 20px 0;
+      text-align: center;
+
+      a {
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
   .image-link-buttons {
-    float: left;
+    margin-bottom: 20px;
   }
 }
 
 #right-column {
   .content {
     margin-left: 150px;
+    #welcome-name {
+      padding-top: 20px;
+      color: #0078B4;
+    }
   }
   .login {
     float: right;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
     white-space: nowrap;
   }
 

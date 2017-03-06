@@ -16,6 +16,7 @@
         </div>
         <div id="user-img-link" class="image-link-buttons">
           <%= link_to image_tag("temp-user-img.png", alt: "user-img"), edit_user_registration_path %>
+          <h4 class="user-name">First Last</h4>
         </div>
         <div id="feature-links">
           <div class="feature-link"><%= link_to 'Schedule', '' %></div>
@@ -33,6 +34,7 @@
           <% end %>
         </div>
         <div class="content">
+          <h1 id="welcome-name">Welcome, First Last</h1>
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
 
