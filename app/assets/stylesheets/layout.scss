@@ -1,14 +1,27 @@
 #navigation {
   float: left;
   width: 100px;
+  background-color: #153B50;
 
-  img {
-    width: 80px;
-    height: 80px;
+  #feature-links {
+    .feature-link {
+      color: red;
+    }
+  }
+
+  .image-link-buttons {
+    float: left;
   }
 }
 
 #right-column {
-  float: right;
-  
+  .content {
+    margin-left: 150px;
+  }
+  .login {
+    float: right;
+    margin-right: 10px;
+    white-space: nowrap;
+  }
+
 }
