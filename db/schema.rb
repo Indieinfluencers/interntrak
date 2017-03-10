@@ -15,10 +15,43 @@ ActiveRecord::Schema.define(version: 20170410145100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "answer_options", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "question_group_id"
+    t.string  "text",              null: false
+    t.integer "order"
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id",        null: false
+    t.integer "survey_response_id", null: false
+    t.text    "response",           null: false
+  end
+
   create_table "journal_entries", force: :cascade do |t|
     t.text    "content",   null: false
     t.integer "author_id", null: false
     t.date    "date_for",  null: false
+  end
+
+  create_table "question_groups", force: :cascade do |t|
+    t.string  "title"
+    t.text    "description", null: false
+    t.integer "survey_id",   null: false
+    t.integer "order"
+  end
+
+  create_table "question_types", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "survey_id",                        null: false
+    t.text    "text",                             null: false
+    t.integer "question_type_id",                 null: false
+    t.boolean "mandatory",         default: true, null: false
+    t.integer "question_group_id"
+    t.integer "order"
   end
 
   create_table "resource_topics", force: :cascade do |t|
@@ -45,6 +78,18 @@ ActiveRecord::Schema.define(version: 20170410145100) do
     t.datetime "updated_at",        null: false
   end
 
+  create_table "survey_responses", force: :cascade do |t|
+    t.integer "respondent_id", null: false
+    t.integer "survey_id",     null: false
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string  "name",                       null: false
+    t.string  "description",                null: false
+    t.integer "author_id",                  null: false
+    t.boolean "active",      default: true, null: false
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string   "title",       null: false
     t.text     "description"
@@ -58,7 +103,6 @@ ActiveRecord::Schema.define(version: 20170410145100) do
     t.string   "hover_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                          null: false
