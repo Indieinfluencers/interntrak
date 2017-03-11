@@ -1,0 +1,7 @@
+<%= form_for @survey do |form| %>
+  <p><%= form.label :name %><%= form.text_field :name %></p>
+  <p><%= form.label :description %><%= form.text_area :description %></p>
+  <p><%= form.label :active %><%= form.check_box :active %></p>
+
+  <%= form.button %>
+<% end %>
