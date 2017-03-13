@@ -1,5 +1,5 @@
 div.container {
-  background-color: #ededed;
+  background-color: #f4f4f4;
   font-family: "Arial";
 }
 
@@ -21,9 +21,10 @@ div.container {
     .feature-link {
       padding: 20px 0;
       text-align: center;
+      text-transform: uppercase;
 
       a {
-        font-size: 14px;
+        font-size: 13px;
         color: white;
         text-decoration: none;
       }
@@ -45,6 +46,7 @@ div.container {
     #welcome-name {
       padding-top: 20px;
       color: #0078B4;
+      font-weight: bold;
     }
   }
   .login {

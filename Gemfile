@@ -17,6 +17,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+# What I included to install Twitter Bootstrap less-rails gem
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+
 group :development, :test do
   gem "capybara"
   gem "database_cleaner"
