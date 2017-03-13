@@ -28,15 +28,13 @@
         </div>
       </div>
       <div id="right-column">
-        <div class="login">
+        <div id="login">
           <% if user_signed_in? %>
             <%= link_to image_tag("settings-icon.png", alt: "settings-icon") %>
-          <% end %>
-          <% if user_signed_in? %>
             <%= link_to('Sign out', sign_out_path, class: "btn btn__link", :method => :delete) %>
           <% end %>
         </div>
-        <div class="content">
+        <div id="content">
           <h3 id="welcome-name">Welcome, First Last.</h3>
           <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p>
