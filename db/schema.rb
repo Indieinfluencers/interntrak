@@ -21,6 +21,31 @@ ActiveRecord::Schema.define(version: 20170314145220) do
     t.date    "date_for",  null: false
   end
 
+  create_table "resource_topics", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "resource_types", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.string   "icon",       null: false
+    t.string   "hover_text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "title",             null: false
+    t.text     "description"
+    t.string   "physical_location"
+    t.string   "url"
+    t.integer  "author_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                          null: false
     t.string   "last_name",                           null: false
