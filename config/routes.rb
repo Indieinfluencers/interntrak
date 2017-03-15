@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :journal_entries, except: [:index, :destroy]
 
   root to: 'dashboards#show'
+
+  resources :resources
 end
