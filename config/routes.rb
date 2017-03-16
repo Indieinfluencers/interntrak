@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboards/show'
+  get 'dashboards/show', as: 'dashboard'
 
   devise_for :users
 
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     get 'sign_up', to: 'devise/registrations#new'
     delete 'sign_out', to: 'devise/sessions#destroy'
   end
+
+  resources :journal_entries, except: [:index, :destroy]
 
   root to: 'dashboards#show'
 end
