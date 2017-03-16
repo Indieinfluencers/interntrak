@@ -7,16 +7,13 @@ describe "A journal entry" do
 
     visit new_journal_entry_path
     select Date.today.year, from: :journal_entry_date_for_1i
-
     # Select today's month by the name
     select Date::MONTHNAMES[Date.today.month], from: :journal_entry_date_for_2i
-
     select Date.today.day, from: :journal_entry_date_for_3i
-
     fill_in :journal_entry_content, with: "Day 1: No apparent signs of life"
-
     click_on "Create Journal entry"
-    entry = user.journal_entries.first
+
+    entry = user.journal_entries.last
 
     expect(entry.date_for).to eq(Date.today)
     expect(entry.content).to eq("Day 1: No apparent signs of life")
@@ -29,9 +26,7 @@ describe "A journal entry" do
 
     visit edit_journal_entry_path(entry)
     select Date.today.day + 1, from: :journal_entry_date_for_3i
-
     fill_in :journal_entry_content, with: "Day 2: I found food!"
-
     click_on "Update Journal entry"
 
     expect(entry.reload.date_for).to eq(Date.tomorrow)
