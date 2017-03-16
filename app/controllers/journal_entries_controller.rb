@@ -24,10 +24,8 @@ class JournalEntriesController < ApplicationController
   end
 
   def update
-    @entry.update(journal_params)
-
-    if @entry.save
-      flash[:success] = "Journal entry successfully saved"
+    if @entry.update(journal_params)
+      flash[:success] = "Journal entry successfully updated"
       redirect_to dashboard_path
     else
       render :edit
