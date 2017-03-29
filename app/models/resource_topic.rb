@@ -1,5 +1,4 @@
 class ResourceTopic < ApplicationRecord
-  has_many :resources, dependent: :destroy
-
-  validates :title, presence: true
+  belongs_to :topic
+  belongs_to :resource
 end

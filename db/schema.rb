@@ -10,30 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314145220) do
+ActiveRecord::Schema.define(version: 20170313151134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "journal_entries", force: :cascade do |t|
-    t.text    "content",   null: false
-    t.integer "author_id", null: false
-    t.date    "date_for",  null: false
-  end
-
   create_table "resource_topics", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "resource_types", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.string   "icon",       null: false
-    t.string   "hover_text", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "resource_id"
+    t.integer "topic_id"
+    t.index ["resource_id"], name: "index_resource_topics_on_resource_id", using: :btree
+    t.index ["topic_id"], name: "index_resource_topics_on_topic_id", using: :btree
   end
 
   create_table "resources", force: :cascade do |t|
@@ -44,6 +30,21 @@ ActiveRecord::Schema.define(version: 20170314145220) do
     t.integer  "author_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.string   "icon",       null: false
+    t.string   "hover_text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
