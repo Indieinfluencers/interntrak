@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313151134) do
+ActiveRecord::Schema.define(version: 20170410145100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20170313151134) do
     t.integer "topic_id"
     t.index ["resource_id"], name: "index_resource_topics_on_resource_id", using: :btree
     t.index ["topic_id"], name: "index_resource_topics_on_topic_id", using: :btree
+  end
+
+  create_table "resource_types", force: :cascade do |t|
+    t.integer "resource_id"
+    t.integer "type_id"
+    t.index ["resource_id"], name: "index_resource_types_on_resource_id", using: :btree
+    t.index ["type_id"], name: "index_resource_types_on_type_id", using: :btree
   end
 
   create_table "resources", force: :cascade do |t|

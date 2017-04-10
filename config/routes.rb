@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :journal_entries, except: [:index, :destroy]
+  resources :resources
 
   root to: 'dashboards#show'
-
-  resources :resources
 end
