@@ -1,4 +1,4 @@
-require "spec helper"
+require "rails_helper"
 
 describe "resources" do
   it "allows user to see resource panel" do
