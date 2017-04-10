@@ -1,9 +1,17 @@
 <h1>Resources</h1>
-<ul>
-<% @resources.each do |resource| %>
-  <li>
-    <%= link_to(resource.title, resource.url) %>
-    <%= resource.description %>
-  </li>
+<% @topics.each do |topic| %>
+  <h2>
+    <%= topic.title %>
+  </h2>
+  <p>
+    <%= topic.description %>
+  </p>
+  <ul>
+  <% topic.resources.each do |resource| %>
+    <li>
+      <%= link_to(resource.title, resource.url) %>
+      <%= resource.description %>
+    </li>
+  <% end %>
+  </ul>
 <% end %>
-</ul>

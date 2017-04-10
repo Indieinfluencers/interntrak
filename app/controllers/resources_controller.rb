@@ -4,7 +4,6 @@ class ResourcesController < ApplicationController
   end
 
   def index
-    @resources = Resource.all
-
+    @topics = Topic.all
   end
 end

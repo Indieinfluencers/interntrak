@@ -8,22 +8,36 @@ User.create(
   password_confirmation: "password"
 )
 
-# resources
+# Resources
 
-Resource.create(
+css_grid_garden = Resource.create!(
   title: "CSS Grid Garden",
   description: "Interactive garden to learn about CSS3 Grid Layout",
   url: "http://cssgridgarden.com",
 )
 
-Resource.create(
+flexbox_froggy = Resource.create!(
   title: "Flexbox Froggy",
   description: "Interactive game to learn about CSS3 Flexbox Layout",
   url: "http://flexboxfroggy.com",
 )
 
-Resource.create(
+try_git = Resource.create!(
   title: "tryGit",
   description: "Interactive 25-part Git lesson",
   url: "https://try.github.io/levels/1/challenges/1",
+)
+
+# Topics
+
+Topic.create!(
+  title: "CSS",
+  description: "Styling for HTML webpages",
+  resources: [css_grid_garden, flexbox_froggy],
+)
+
+Topic.create!(
+  title: "Git",
+  description: "Cooperative coding",
+  resources: [try_git],
 )
