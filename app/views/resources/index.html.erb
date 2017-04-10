@@ -14,7 +14,7 @@
       <div class="types">
         Types:
         <% resource.types.each do |type| %>
-          <%= link_to(type.title, "#") %>
+          <%= link_to(type.title, type_path(type)) %>
         <% end %>
       </div>
     </li>
