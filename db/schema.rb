@@ -15,6 +15,12 @@ ActiveRecord::Schema.define(version: 20170410145100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "journal_entries", force: :cascade do |t|
+    t.text    "content",   null: false
+    t.integer "author_id", null: false
+    t.date    "date_for",  null: false
+  end
+
   create_table "resource_topics", force: :cascade do |t|
     t.integer "resource_id"
     t.integer "topic_id"
