@@ -41,3 +41,15 @@ Topic.create!(
   description: "Cooperative coding",
   resources: [try_git],
 )
+
+# types
+
+Type.create!(
+  title: "Game",
+  resources: [css_grid_garden, flexbox_froggy],
+)
+
+Type.create!(
+  title: "Tutorial",
+  resources: [try_git, css_grid_garden, flexbox_froggy],
+)

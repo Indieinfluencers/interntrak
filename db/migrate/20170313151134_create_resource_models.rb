@@ -19,8 +19,8 @@ class CreateResourceModels < ActiveRecord::Migration[5.0]
 
     create_table :types do |t|
       t.string :title, null: false
-      t.string :icon, null: false
-      t.string :hover_text, null: false
+      t.string :icon
+      t.string :hover_text
 
       t.timestamps
     end

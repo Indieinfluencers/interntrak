@@ -11,6 +11,12 @@
     <li>
       <%= link_to(resource.title, resource.url) %>
       <%= resource.description %>
+      <div class="types">
+        Types:
+        <% resource.types.each do |type| %>
+          <%= link_to(type.title, "#") %>
+        <% end %>
+      </div>
     </li>
   <% end %>
   </ul>
