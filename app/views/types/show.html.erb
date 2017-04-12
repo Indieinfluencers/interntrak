@@ -1,8 +1,17 @@
 <h1>
   <%= @type.title %>
 </h1>
+<ul>
 <% @type.resources.each do |resource| %>
-  <h3>
-    <%= resource.title %>
-  </h3>
+  <li>
+    <%= link_to(resource.title, resource.url) %>
+    <%= resource.description %>
+    <div class="types">
+      Types:
+      <% resource.types.each do |type| %>
+        <%= link_to(type.title, type_path(type)) %>
+      <% end %>
+    </div>
+  </li>
 <% end %>
+</ul>
