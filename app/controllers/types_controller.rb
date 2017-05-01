@@ -1,6 +1,5 @@
 class TypesController < ApplicationController
-
   def show
-    @type = Type.all.includes(:id)
+    @type = Type.find(params[:id]).includes(:resources)
   end
 end
