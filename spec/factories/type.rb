@@ -1,5 +1,5 @@
 FactoryGirl.define do
- factory :type do
-   title  "Tutorial"
- end
+  factory :type do
+    title  "Tutorial"
+  end
 end
