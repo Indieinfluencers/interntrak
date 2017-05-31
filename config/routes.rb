@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'dashboards/show', as: 'dashboard'
 
+  resources :surveys
+
   devise_for :users
 
   devise_scope :user do

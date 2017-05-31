@@ -25,6 +25,9 @@ describe "A journal entry" do
     login_as entry.author
 
     visit edit_journal_entry_path(entry)
+
+    select Date.tomorrow.year, from: :journal_entry_date_for_1i
+    select Date::MONTHNAMES[Date.tomorrow.month], from: :journal_entry_date_for_2i
     select Date.tomorrow.day, from: :journal_entry_date_for_3i
     fill_in :journal_entry_content, with: "Day 2: I found food!"
     click_on "Update Journal entry"
