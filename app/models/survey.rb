@@ -3,5 +3,5 @@ class Survey < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :question_groups, dependent: :destroy
 
-  validates :author, :name, presence: true
+  validates :author, :name, :description, presence: true
 end
