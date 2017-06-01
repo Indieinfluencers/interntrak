@@ -18,4 +18,22 @@ RSpec.describe User do
       expect(unassigned_user.admin?).to eq(false)
     end
   end
+
+  describe "intern?" do
+    it "evaluates to true if the user has the intern role" do
+      user = build(:user, role: "intern")
+
+      expect(user.intern?).to eq(true)
+    end
+
+    it "evaluates to false if the user doesn't have the intern role" do
+      team_user = build(:user, role: "team")
+      admin_user = build(:user, role: "admin")
+      unassigned_user = build(:user, role: "unassigned")
+
+      expect(team_user.intern?).to eq(false)
+      expect(admin_user.intern?).to eq(false)
+      expect(unassigned_user.intern?).to eq(false)
+    end
+  end
 end
