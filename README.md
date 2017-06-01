@@ -32,3 +32,7 @@ Interntrak is a tool for administering Collective Idea's internship program.
 ## Roles and Permissions
 
 This app has a very basic authorization approach. A user has a single role, either "intern", "team", "admin", or "unassigned". New users are defaulted to the "unassigned" role until an admin sets the correct role for them. This prevents improper access to the app's features.
+
+Only an admin can:
+
+* view the list of users,
