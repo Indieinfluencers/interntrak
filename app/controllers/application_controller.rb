@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def require_admin
+    unless current_user && current_user.admin?
+      redirect_to root_path, notice: "Only admins can access that functionality."
+    end
+  end
+
   protected
 
   def configure_permitted_parameters
