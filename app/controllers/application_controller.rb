@@ -10,6 +10,18 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_intern
+    unless current_user && current_user.intern?
+      redirect_to root_path, notice: "Only interns can access that functionality."
+    end
+  end
+
+  def require_intern_or_admin
+    unless current_user && ["intern", "admin"].include?(current_user.role)
+      redirect_to root_path, notice: "You can not access that functionality."
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

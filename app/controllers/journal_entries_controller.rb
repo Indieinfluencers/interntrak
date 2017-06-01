@@ -1,4 +1,6 @@
 class JournalEntriesController < ApplicationController
+  before_action :require_intern, only: [:new, :create, :edit, :update]
+  before_action :require_intern_or_admin, only: [:show]
   before_action :find_journal_entry, only: [:edit, :show, :update]
 
   def new
@@ -35,7 +37,11 @@ class JournalEntriesController < ApplicationController
   private
 
   def find_journal_entry
-    @entry = current_user.journal_entries.find(params[:id])
+    if current_user.admin?
+      @entry = JournalEntry.find(params[:id])
+    else
+      @entry = current_user.journal_entries.find(params[:id])
+    end
   end
 
   def journal_params

@@ -36,3 +36,9 @@ This app has a very basic authorization approach. A user has a single role, eith
 Only an admin can:
 
 * view the list of users,
+* view an intern's journal entries,
+
+Only an intern can:
+
+* create a new journal entry,
+* edit a journal entry,
