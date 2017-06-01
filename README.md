@@ -29,3 +29,16 @@ Interntrak is a tool for administering Collective Idea's internship program.
    ```bash
    $ rails s
    ```
+## Roles and Permissions
+
+This app has a very basic authorization approach. A user has a single role, either "intern", "team", "admin", or "unassigned". New users are defaulted to the "unassigned" role until an admin sets the correct role for them. This prevents improper access to the app's features.
+
+Only an admin can:
+
+* view the list of users,
+* view an intern's journal entries,
+
+Only an intern can:
+
+* create a new journal entry,
+* edit a journal entry,
